@@ -1,55 +1,215 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 25.2.2.2 (Windows)"/>
-	<meta name="created" content="2026-06-12T15:51:19.544675500"/>
-	<meta name="changed" content="2026-06-12T16:02:20.199887600"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laurence Bessas Joyeux - Lo’Art</title>
+    <style>
+        /* --- Reset & Variables --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --bg-color: #faf9f6; /* Blanc cassé style galerie */
+            --text-color: #1a1a1a;
+            --accent-color: #8c7853; /* Teinte bronze/doré mat pour les sculptures */
+            --card-bg: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        body {
+            font-family: 'Playfair Display', 'Didot', 'Georgia', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        /* --- Conteneur Principal --- */
+        .gallery-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* --- En-tête (Header) --- */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        header .subtitle {
+            font-family: 'Montserrat', 'Helvetica', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            font-weight: 300;
+        }
+
+        header::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin: 30px auto 0;
+        }
+
+        /* --- Informations de Contact --- */
+        .info-section {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            color: #555;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- Grille de la Galerie (Liens) --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .gallery-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 40px 30px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Effet de survol élégant style expo */
+        .gallery-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--accent-color);
+            transform: scale(1.05);
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .gallery-card:hover::before {
+            transform: scale(0.93);
+            opacity: 1;
+        }
+
+        .gallery-card h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .gallery-card span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .info-section { flex-direction: column; gap: 15px; align-items: center; }
+            body { padding: 20px 15px; }
+        }
+    </style>
+    <!-- Importation de polices esthétiques depuis Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
-<body lang="fr-FR" dir="ltr"><p align="center"><font face="Script MT Bold, cursive"><font size="6" style="font-size: 30pt"><u><b>Laurence
-Bessas Joyeux</b></u></font></font></p>
-<p align="center"><br/>
-<br/>
+<body>
 
-</p>
-<dl><dd>
-	<dd><font face="Script MT Bold, cursive"><font size="6" style="font-size: 25pt"><span style="font-weight: normal">Lo’Art</span>
-	– Sculptures</font></font></dd><dd>
-	<br/>
+    <div class="gallery-container">
+        
+        <!-- En-tête de l'artiste -->
+        <header>
+            <h1>Laurence Bessas Joyeux</h1>
+            <div class="subtitle">Lo’Art – Sculptures</div>
+        </header>
 
-	</dd><dd>
-	<font face="Script MT Bold, cursive"><font size="6" style="font-size: 25pt">23
-	rue Auguste Gal – Nice</font></font></dd><dd>
-	<br/>
+        <!-- Informations pratiques (Nice) -->
+        <div class="info-section">
+            <div class="info-item">
+                <span>📍</span> 23 rue Auguste Gal – Nice
+            </div>
+            <div class="info-item">
+                <span>📞</span> 06 50 82 93 75
+            </div>
+        </div>
 
-	</dd><dd>
-	<font face="Script MT Bold, cursive"><font size="6" style="font-size: 25pt">06
-	50 82 93 75</font></font></dd><dd>
-	<br/>
+        <!-- Section Exposition / Liens Répertoire -->
+        <div class="gallery-grid">
+            
+            <a href="https://www.artnet.fr/artistes/laurence-bessas/" class="gallery-card" target="_blank">
+                <h3>Artnet</h3>
+                <span>Voir le catalogue</span>
+            </a>
 
-	</dd><dd>
-	<font face="Script MT Bold, cursive"><font size="6" style="font-size: 25pt"><u>Répertoire
-	liens cliquables (hyperlien)</u></font></font></dd><dd>
-	<br/>
+            <a href="https://www.la-fonderie.org/membres/laurence/" class="gallery-card" target="_blank">
+                <h3>La Fonderie</h3>
+                <span>Profil d'artiste</span>
+            </a>
 
-	</dd><dd>
-	<a href="https://www.artnet.fr/artistes/laurence-bessas/"><font color="#00008b"><font face="Script MT Bold, cursive"><font size="6" style="font-size: 25pt">Lien
-	Artnet</font></font></font></a></dd><dd>
-	<a href="https://www.la-fonderie.org/membres/laurence/"><font color="#00008b"><font face="Script MT Bold, cursive"><font size="6" style="font-size: 25pt">Lien
-	La Fonderie</font></font></font></a></dd><dd>
-	<font color="#00008b"><font face="Script MT Bold, cursive"><font size="6" style="font-size: 25pt"><a href="https://www.tourrette-levens.fr/laurence-bessas-joyeux-une-nouvelle-artiste-au-village/">Lien
-	Tourrette-Levens</a><br/>
-</font></font></font><a href="https://www.ville-saintraphael.fr/exodes/artistes/bessas-joyeux-laurence-5759"><font color="#00008b"><font face="Script MT Bold, cursive"><font size="6" style="font-size: 25pt">Lien
-	Saint-Raphael</font></font></font></a></dd><dd>
-	<br/>
+            <a href="https://www.tourrette-levens.fr/laurence-bessas-joyeux-une-nouvelle-artiste-au-village/" class="gallery-card" target="_blank">
+                <h3>Tourrette-Levens</h3>
+                <span>Article de presse</span>
+            </a>
 
-	</dd><dd>
-	<br/>
+            <a href="https://www.ville-saintraphael.fr/exodes/artistes/bessas-joyeux-laurence-5759" class="gallery-card" target="_blank">
+                <h3>Saint-Raphaël</h3>
+                <span>Fiche exposition</span>
+            </a>
 
-	</dd><dd>
-	<br/>
+        </div>
 
-	</dd></dd></dl>
+    </div>
+
 </body>
 </html>
